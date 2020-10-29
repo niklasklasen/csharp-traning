@@ -11,12 +11,14 @@ namespace GradeBook
             book.AddGrade(89.1);
             book.AddGrade(90.5);
             book.AddGrade(77.5);
+            book.AddGrade(105.3);
 
             var stats = book.GetStatistics();
 
             Console.WriteLine($"The avrage is {stats.Average:N1}");
             System.Console.WriteLine($"The lowest is {stats.Low}");
             Console.WriteLine($"The highest is {stats.High}");
+            Console.WriteLine($"The letter is {stats.letter}");
         }
     }
 }
