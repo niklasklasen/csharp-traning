@@ -78,7 +78,6 @@ namespace GradeBook
                 result.letter = 'D';
                 break;
 
-
                 default:
                 result.letter = 'F';
                 break;

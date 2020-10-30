@@ -9,9 +9,19 @@ namespace GradeBook
         {
             var book = new Book("Niklas Grade Book");
             book.AddGrade(89.1);
-            book.AddGrade(90.5);
-            book.AddGrade(77.5);
-            book.AddGrade(105.3);
+            while (true)
+            {
+                var input = Console.ReadLine();
+                if (input == "q")
+                {
+                    break;
+                }
+                else
+                {
+                    var grade = double.Parse(input);
+                    book.AddGrade(grade);
+                }
+            }
 
             var stats = book.GetStatistics();
 
