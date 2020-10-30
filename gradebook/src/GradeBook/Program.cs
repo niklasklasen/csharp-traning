@@ -11,6 +11,7 @@ namespace GradeBook
             book.AddGrade(89.1);
             while (true)
             {
+                Console.WriteLine("Enter a grade or 'q' to quit ");
                 var input = Console.ReadLine();
                 if (input == "q")
                 {
@@ -18,8 +19,23 @@ namespace GradeBook
                 }
                 else
                 {
-                    var grade = double.Parse(input);
-                    book.AddGrade(grade);
+                    try
+                    {
+                        var grade = double.Parse(input);
+                        book.AddGrade(grade);
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                    finally
+                    {
+                        Console.WriteLine("**");
+                    }
                 }
             }
 
